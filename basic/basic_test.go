@@ -1,6 +1,9 @@
 package basic
 
-import "testing"
+import (
+	"testing"
+	"github.com/stretchr/testify/assert"
+)
 
 func TestSquare(t *testing.T) {
 	type args struct {
@@ -11,11 +14,11 @@ func TestSquare(t *testing.T) {
 		args args
 		want int
 	}{
-	{
-		name:"square should square a positive integer",
-		args: args{num:4},
-		want:16,
-	},
+		{
+			name: "square should square a positive integer",
+			args: args{num: 4},
+			want: 16,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -24,4 +27,9 @@ func TestSquare(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestGCD(t *testing.T) {
+	actual := GCD(2,3)
+	assert.Equal(t, actual, 1, "GCD of 2 and 3 should be 1.")
 }
