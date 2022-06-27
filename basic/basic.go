@@ -75,3 +75,13 @@ func TakeFibonacci(nth int) []int {
 	}
 	return terms
 }
+
+func FilterEven(nums []int) []int  {
+	slice:= make([]int, 0)
+	for _, v := range nums {
+		if IsEven(v) {
+			slice = append(slice,v)				
+		}
+	}
+	return slice
+}
