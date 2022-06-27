@@ -48,3 +48,30 @@ func Sum(num int) int {
 	}
 	return sum
 }
+
+func Factorial(num int) int {
+	if(num==1){
+		return 1;
+	}
+	return Factorial(num-1)* num
+}
+
+func Fibonacci() func() int {
+	var first int = 0
+	var second  int = 1
+	return func () int {
+		third:= first + second
+		first = second
+		second = third
+		return third
+	}
+}
+
+func TakeFibonacci(nth int) []int {
+	gen := Fibonacci()
+	terms:=make([]int, nth)
+	for i := range terms {
+		terms[i] = gen()
+	}
+	return terms
+}

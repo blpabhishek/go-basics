@@ -12,4 +12,5 @@ func main() {
 	fmt.Println(basic.LCM(3, 7))
 	fmt.Println(basic.LCM(28, 16))
 	fmt.Println(basic.Sum(10))
+	fmt.Println(basic.TakeFibonacci(10))
 }
